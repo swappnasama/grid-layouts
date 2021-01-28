@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <Style>
+    body{
+      
+      font-size: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 100px 100px 100px;
+      gap: 10px;
+      justify-content: center;
+      
+      width:300px;
+
+      color:white;
+    }
+
+    .item1 {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 4;
+
+      background-color: rgba(74,102,112,.7);
+      border: 5px solid rgba(74,102,112,1);
+      border-radius: 5px;
+    }
+
+    .item2 {
+    grid-area: 2 / -1 / 4 / 2;
+    
+    z-index: 1;
+    background-color: rgba(214,162,173,.7);
+    border: 5px solid rgba(214,162,173,1);
+    border-radius: 5px;;
+
+    }
+    .wrapper{
+      width: 80vw;
+      margin: 0 auto;
+      
+    }
+    /*second grid autoplacement*/
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+      width:500px;
+    }
+    .grid2 > div{
+      background-color:indigo;
+      color:lavender;
+      padding:20px;
+
+    }
+    .one{
+      grid-area: 1 / 1 / 1 / 4;
+    }
+    .four{
+      grid-row-start:3;
+      grid-column-start:2;
+    }
+    /*image grid styles*/
+    .image-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      width:500px;
+      grid-gap:15px;
+      
+    }
+    .image-grid > div{
+      background-color: brown;
+      color: burlywood;
+      padding: 50px;
+    }
+    
+    .image-one{
+      grid-area: 1 / 2 / 1 / 4;
+    }
+    .image-four{
+      grid-area: 1 / 1/ 3 / 2;
+    }
+    .image-five{
+      grid-area: 1 / 4 / 3 / 5;
+    }
+  </Style>
+</head>
+<body>
+  
+  <div class="wrapper">
+  <h3>Grid overlap</h3>
+  <div class="grid">
+    <div class="item1">One</div>
+    <div class="item2">Two</div>
+  </div>
+  <h3>Auto placement</h3>
+  <div class="grid2">
+    <div class="one">One</div>
+    <div class="two">Two</div>
+    <div class="three">Three</div>
+    <div class="four">Four</div>
+  </div>
+  <h3>3.5 columns</h3>
+  <div class="image-grid">
+    <div class="image-one"> 1</div>
+    <div class="image-two">2</div>
+    <div class="image-three">3</div>
+    <div class="image-four">4</div>
+    <div class="image-five">5</div>
+  </div>
+</div>
+</body>
+</html>
